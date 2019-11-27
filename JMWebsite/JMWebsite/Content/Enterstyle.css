@@ -1,0 +1,75 @@
+.fullscreen-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -100;
+}
+
+.fullscreen-bg__video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    height: 300%;
+    top: -100%;
+  }
+}
+
+@media (max-aspect-ratio: 16/9) {
+  .fullscreen-bg__video {
+    width: 300%;
+    left: -100%;
+  }
+}
+
+@media (max-width: 767px) {
+  .fullscreen-bg {
+    background: url('../img/videoframe.jpg') center center / cover no-repeat;
+  }
+
+  .fullscreen-bg__video {
+    display: none;
+  }
+}
+
+img {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   
+   margin-top: -170px; /* Half the height */
+   margin-left: -250px; /* Half the width */
+}
+
+
+.button {
+  left: 50%;
+  padding: 15px 15px;
+  border: 2px solid #fff;
+  font-size: 1.5em;
+  color: #fff;
+  text-decoration: none;
+  position: absolute;
+  margin-top: 700px; /* Half the height */
+  margin-left: -115px; /* Half the width */
+}
+
+.button:hover {
+  background: #161f32;
+  color: #fff;
+}
+
+.action {
+  width: 31%;
+  margin: 5em auto;
+  
+}
+

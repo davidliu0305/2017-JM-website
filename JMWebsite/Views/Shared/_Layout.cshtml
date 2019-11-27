@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+
+    <link rel="shortcut icon" type="image/ico" href="@Url.Content("~/favicon.ico")">
+    <title>@ViewBag.Title JM's</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <script type="text/javascript">
+        var appInsights=window.appInsights||function(config){
+            function r(config){t[config]=function(){var i=arguments;t.queue.push(function(){t[config].apply(t,i)})}}var t={config:config},u=document,e=window,o="script",s=u.createElement(o),i,f;for(s.src=config.url||"//az416426.vo.msecnd.net/scripts/a/ai.0.js",u.getElementsByTagName(o)[0].parentNode.appendChild(s),t.cookie=u.cookie,t.queue=[],i=["Event","Exception","Metric","PageView","Trace","Ajax"];i.length;)r("track"+i.pop());return r("setAuthenticatedUserContext"),r("clearAuthenticatedUserContext"),config.disableExceptionTracking||(i="onerror",r("_"+i),f=e[i],e[i]=function(config,r,u,e,o){var s=f&&f(config,r,u,e,o);return s!==!0&&t["_"+i](config,r,u,e,o),s}),t
+        }({
+            instrumentationKey:"2b1860e0-66d0-4f01-a760-b4d2cdc50690"
+        });
+        
+        window.appInsights=appInsights;
+        appInsights.trackPageView();
+    </script>
+</head>
+<body id="page-top"> 
+    <nav id="mainNav" class="navbar navbar-default navbar-fixed-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+                </button>
+                @Html.ActionLink("JM's", "Index", "Enter", new { area = "" }, new { @class = "navbar-brand page-scroll" })
+            </div>
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    @if (!User.Identity.IsAuthenticated)
+                    {
+                        <li class="page-scroll">@Html.ActionLink("Home", "Index", "Home")</li>
+                        <li class="page-scroll">@Html.ActionLink("About Us", "Index", "About")</li>
+                        <li class="page-scroll">@Html.ActionLink("Testimonials", "Index", "Testimonials")</li>
+                        <li class="page-scroll">@Html.ActionLink("Events", "Index", "Events")</li>
+                        <li class="page-scroll">@Html.ActionLink("Gallery", "Index", "Gallery")</li>
+                        <li class="page-scroll">@Html.ActionLink("Contact", "Index", "Contact")</li>
+                    }
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <li class="page-scroll">@Html.ActionLink("Admin", "Index", "Admin")</li>
+                        <li class="page-scroll">@Html.ActionLink("Manage Events", "IndexForAdmin", "Events")</li>
+                        <li class="page-scroll">@Html.ActionLink("Clients", "Index", "Client")</li>
+                        <li class="page-scroll">@Html.ActionLink("Guests", "Index", "Guests")</li>
+                        <li class="page-scroll">@Html.ActionLink("Attendees", "Index", "Attendees")</li>
+                        <li class="page-scroll">@Html.ActionLink("Contracts", "Index", "Contracts")</li>
+                        <li class="page-scroll">@Html.ActionLink("Schedules", "Index", "Schedules")</li>
+                        <li class="page-scroll">@Html.ActionLink("Catering Services", "Index", "CateringServices")</li>
+                    }
+                </ul>
+                    @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </nav>
+    @RenderBody()   
+    @*<div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - JM's</p>
+        </footer>
+    </div>*@
+    @*<div style="background-color:#161f32;">*@
+    @*<footer style="text-align:center; color:white; background-color:#161f32; margin-bottom:0px; clear:both;">
+        &copy; @DateTime.Now.Year - JM's
+    </footer>*@
+    @*</div>*@    
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+
+</html>

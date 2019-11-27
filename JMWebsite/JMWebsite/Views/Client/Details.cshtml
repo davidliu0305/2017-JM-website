@@ -1,0 +1,82 @@
+﻿@model JMWebsite.Models.Client
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Client</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.cliName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cliName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cliCity)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cliCity)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cliAddress)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cliAddress)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cliPhone)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cliPhone)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cliEmail)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cliEmail)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cliPostCode)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cliPostCode)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cliContactFirst)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cliContactFirst)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.cliContactLast)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.cliContactLast)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,131 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/creative.min.testimonials.css" rel="stylesheet">
+<script src="~/Scripts/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.accordion').find('.accordion-toggle').click(function () {
+            var $obj = $(this);
+
+            $obj.toggleClass('open');
+
+            closeAll($obj);
+            is_open($obj);
+        });
+        function closeAll($stuff) {
+            $(".accordion-content").not($stuff.next()).slideUp('fast');
+            var $previous = $('.accordion-content').not($stuff.next()).prev();
+
+            if ($previous.hasClass('open')) {
+                $previous.removeClass('open');
+            }
+        }
+        function is_open($thing) {
+            $thing.next().slideToggle('fast');
+        }
+    });
+</script>
+<style>
+    .accordion{position:relative; }
+    .accordion-toggle{cursor:pointer; }
+    .accordion-toggle:before{content:url(http://demandware.edgesuite.net/aata_prd/on/demandware.static/-/Library-Sites-CG-Global/default/dw528e14ae/pages/faq/img/caret-right.png);
+    display:inline-block;
+    position:absolute;
+    left:-20px;
+    }
+    .accordion-content{display:none;}
+    .accordion-content.default{display:block;}
+    .accordion-content p{margin-left:20px}
+    .open:before {
+        content: url(http://demandware.edgesuite.net/aata_prd/on/demandware.static/-/Library-Sites-CG-Global/default/dw40d48c0d/pages/faq/img/caret-down.png);
+        display: inline-block;
+        position: absolute;
+        left: -20px;
+    }
+</style>
+<header>
+    <div class="header-content">
+        <div class="header-content-inner">
+            <h1 id="homeHeading"></h1>
+
+            <br>  <br>  <br> <br>   <br>  <br>  <br>  <br> <br>   <br> <br>  <br>  <br> <br> <br>  <br>  <br> <h1>Testimonials</h1> <br><br>   <br> <br>  <br> <br>   <br>
+
+        </div>
+    </div>
+</header>
+<section id="section1">
+    <div class="row">
+        <div class="col-lg-5 col-lg-offset-1">
+            <div class="top">
+                <div class="box-header">
+                    <h2>Bridal</h2>
+                </div>
+            </div>
+            <div class="accordion">
+                <div>
+
+                    <hr />
+                    <h5 class="accordion-toggle open"><b>Holly & Michael Pietrangelo</b></h5>
+                    <p class="accordion-content default">
+                        Big Mike,<br /><br />
+                        <small>Thanks for putting on such a wonderful evening that will be remembered always! Your professional service, meal presentation and banquet facility are truly unparalleled. You definitely deserved all your success!!!</small><br /><br />
+                        <i>Love & Friends Always Holly & Michael Pietrangelo</i>
+                    </p>
+                </div><br />
+
+                <div>
+                    <h5 class="accordion-toggle open"><b>Michell (Magnotta) & Peter</b></h5>
+                    <p class="accordion-content">
+                        Mike,<br /><br />
+                        <small>From when I was a little girl, I can still remember my father talking about you. I even remember meeting you and that can be a bit scary for a little girl! I have have always known you to be a kinda individual and feel you have been part of the family forever. I even brought Peter on our first date to Barzooka's. I was trying to explain to Peter that you serve "big portions" because you were a "big man" and obviously he didn't understand until he met you himself. I could go on, but what I really want you to know is how happy you made me on my wedding day! I knew that I was in good hands, but you, Sarina and your staff truly amazed Peter and I. Everyone is still talking about our wedding. You are great at what you do, but most of all, you are a kind and passionate man who truly cares about your clients. Even if we are not sharing the same blood, I always have and will consider you family.</small><br /><br />
+                        <i>Mitchell (Magnotta) & Peter</i>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-5 col-lg-offset-1">
+            <img src="/Images/bridal.png" alt="">
+
+        </div>
+    </div>
+</section>
+<section id="section2">
+    <div class="row">
+        <div class="col-lg-5 col-lg-offset-1">
+            <img src="/Images/prof.png" alt="">
+        </div>
+
+        <div class="col-lg-4 col-lg-offset-1">
+
+            <h2>Professionals</h2><br />
+            <hr />
+            <div class="accordion">
+                <div>
+                    <h5 class="accordion-toggle open"><b>Frances & Andy Felice</b></h5>
+                    <p class="accordion-content default">
+                        Dear Mike,<br /><br />
+                        <small>Words cannot express the gratitude and respect we feel for you. All your hard work, attention to detail and dedication to excellence will never be forgotten by us, our families and all of our guests. You truly created a fairytale wedding reception for us. Our guests are still talking! The food and the atmosphere were so perfect. We could not have possibly dreamed or asked for more. Thank you so much for not only making out wedding day fantasies a beautiful reality, but for making the entire experience, from start to finish an enjoyable one! You and your staff are all so warm, friendly and professional, and it was easy to put our confidence in you. You own a huge part of making the most memorable day of our lives so perfect.  We love you and Thank you!!!</small><br /><br />
+                        <i>Frances & Andy Felice</i>
+                    </p>
+                </div><br />
+
+                <div>
+                    <h5 class="accordion-toggle open"><b>Donna Cowan, JP</b></h5>
+                    <p class="accordion-content">
+                        Dear Mike and Staff,<br /><br />
+                        <small>The cocktail party for Her Worship Meg Belcastro was simply outstanding. Your Banquet Hall was absolutely beautiful and several of the guests from Toronto and Brampton couldn't believe that there would be such a magnificent venue in Thorold. Your staff was so courteous and efficient. As for the food, it was fantastic!!! All of the people who attended just raved about the scrumptious spread and the variety of items served. Meg was Royally treated by having her retirement party at John-Michael's. I'm sure this special occasion and your fine facility will remain in everyone's memory for some time. Thank you for everything!</small><br /><br />
+                        <i>Donna Cowan, JP</i>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<footer style="text-align:center; color:white; background-color:#161f32; height:50px; clear:both;">
+    <br />
+    &copy; @DateTime.Now.Year - JM's
+    <br />
+</footer>

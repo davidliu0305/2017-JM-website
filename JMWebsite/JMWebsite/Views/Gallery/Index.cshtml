@@ -1,0 +1,108 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Gallery";
+}
+
+    <title>Gallery</title>
+    <script src="~/Scripts/jquery-2.1.0.min.js"></script>
+    <script src="~/Scripts/jquery.swipebox.js"></script>
+    <link rel="stylesheet" href="~/Content/swipebox.css">
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <link href="~/Content/creative.min.gallery.css" rel="stylesheet">
+<header>
+    <div class="header-content">
+        <div class="header-content-inner">
+            <h1 id="homeHeading"></h1>
+
+            <br>  <br>  <br> <br>   <br>  <br>  <br>  <br> <br>   <br> <br>  <br>  <br> <br> <br>  <br>  <br> <h1>Gallery</h1> <br><br>   <br> <br>  <br> <br>   <br>
+
+        </div>
+    </div>
+</header>
+
+<section id="gallery" >
+    <form>
+        <script type="text/javascript">
+            ; (function ($) {
+                $('.popup').swipebox({
+                    loopAtEnd: true
+                });
+            })(jQuery);
+        </script>
+        <div>
+            <h2>Black designs</h2>
+
+            <a rel="gallery" href="/Images/b.jpg" class="popup" title="Picture Title">
+                <img src="/Images/b.jpg" alt="black" height="250" width="350">
+            </a>
+            <a rel="gallery" href="/Images/bb.jpg" class="popup" hidden="hidden" title="">
+                <img src="/Images/bb.jpg" alt="background" height="250" width="350">
+            </a>
+            <a rel="gallery" href="/Images/bbb.jpg" hidden="hidden" class="popup">
+                <img src="/Images/bbb.jpg" alt="blackback" height="250" width="350">
+            </a>
+            <a rel="gallery" href="/Images/b.jpg" class="popup" hidden="hidden" title="Picture Title">
+                <img src="/Images/b.jpg" alt="black" height="250" width="350" >
+            </a>
+            <a rel="gallery" href="/Images/b.jpg" class="popup" hidden="hidden" title="Picture Title">
+                <img src="/Images/b.jpg" alt="black" height="250" width="350">
+            </a>
+            <a rel="gallery" href="/Images/b.jpg" class="popup" title="Picture Title">
+                <img src="/Images/b.jpg" alt="black" height="250" width="350">
+            </a>
+            <a rel="gallery" href="/Images/b.jpg" class="popup" title="Picture Title">
+                <img src="/Images/b.jpg" alt="black" height="250" width="350">
+            </a>
+            <a rel="gallery" href="/Images/b.jpg" class="popup" title="Picture Title">
+                <img src="/Images/b.jpg" alt="black" height="250" width="350">
+            </a>
+            <a rel="gallery" href="/Images/b.jpg" class="popup" title="Picture Title">
+                <img src="/Images/b.jpg" alt="black" height="250" width="350">
+            </a>
+        </div>
+
+        <h2>Backgrounds</h2>
+
+        <a rel="gallery1" href="/Images/bbb.jpg" class="popup">
+            <img src="/Images/bbb.jpg" alt="image" height="200" width="250">
+        </a>
+        <a rel="gallery1" href="/Images/bb.jpg" class="popup">
+            <img src="/Images/bb.jpg" alt="image" height="200" width="250">
+        </a>
+        <a rel="gallery1" href="/Images/b.jpg" class="popup">
+            <img src="/Images/b.jpg" alt="image" height="200" width="250">
+        </a>
+
+
+
+
+        @*<div id="carousel-example-generic" class="carousel slide" >
+
+            <div class="carousel-inner">
+                <div class="item active">
+                    <img src="/Images/bb.jpg" alt=".">
+                </div>
+                <div class="item">
+                    <img src="/Images/b.jpg" alt=".">
+                </div>
+
+            </div>
+
+            <a class="carousel-control" href="#carousel-example-generic" data-slide="prev">
+            </a>
+            <a class="carousel-control" href="#carousel-example-generic" data-slide="next">
+            </a>
+        </div>*@
+
+
+
+
+</form>
+</section>
+<footer style="text-align:center; color:white; background-color:#161f32; height:50px; clear:both;">
+    <br />
+    &copy; @DateTime.Now.Year - JM's
+    <br />
+</footer>
+
+

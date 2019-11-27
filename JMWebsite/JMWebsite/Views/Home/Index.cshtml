@@ -1,0 +1,404 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<header>
+    <div class="header-content">
+        <div class="header-content-inner">
+            <h1 id="homeHeading"></h1>
+
+            <br>  <br>  <br> <br>   <br>  <br>  <br>  <br> <br>   <br> <br>  <br>  <br> <br> <br>  <br>  <br>  <p> Banquet and Conference Centre, Beyond Your Expectations </p><br><br>   <br> <br>  <br> <br>   <br>
+
+
+
+            @*<a href="#contact" class="btn btn-primary btn-xl page-scroll">Contact Us</a>*@
+            @Html.ActionLink("Contact Us", "Index", "Contact", new { area = "" }, new { @class = "btn btn-primary btn-xl page-scroll" })
+        </div>
+    </div>
+</header>
+<section id="services">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2 class="section-heading">We Love Our Work!</h2>
+                <hr class="primary">
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <p class="section-heading">
+                    John Michael’s Niagara’ s Premier Banquet and Conference facility conveniently located in the heart of Niagara.
+                    Offering beatifully appointed facilities accoumodating up to 400 guests.
+                </p>
+                <hr class="primary">
+            </div>
+        </div>
+     </div>   
+</section>
+<section class="no-padding" id="portfolio">
+    <div class="container-fluid">
+        <div class="row no-gutter popup-gallery">
+            <div class="col-lg-4 col-sm-6">
+                <a href="" class="portfolio-box">
+                    <img src="/Images/portfolio/thumbnails/1.jpg" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Weddings
+                            </div>
+                            <div class="project-name">
+                                Beautiful wedding venue
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a href="" class="portfolio-box">
+                    <img src="/Images/portfolio/thumbnails/2.jpg" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Events
+                            </div>
+                            <div class="project-name">
+                                The perfect setting to make your event special
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a href="" class="portfolio-box">
+                    <img src="/Images/portfolio/thumbnails/3.jpg" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+                                Celebrations
+                            </div>
+                            <div class="project-name">
+                                From bridal showers to retirement parties
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a href="" class="portfolio-box">
+                    <img src="/Images/portfolio/thumbnails/4.jpg" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+
+                            </div>
+                            <div class="project-name">
+
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a href="" class="portfolio-box">
+                    <img src="/Images/portfolio/thumbnails/5.jpg" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+
+                            </div>
+                            <div class="project-name">
+
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-lg-4 col-sm-6">
+                <a href="" class="portfolio-box">
+                    <img src="/Images/portfolio/thumbnails/6.jpg" class="img-responsive" alt="">
+                    <div class="portfolio-box-caption">
+                        <div class="portfolio-box-caption-content">
+                            <div class="project-category text-faded">
+
+                            </div>
+                            <div class="project-name">
+
+                            </div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="contact">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">Feel Free to Ask Us Anything!</h2>
+                <hr class="primary">
+                <p>You are only a consultation away from a perfectly organized event that you will remember for a lifetime!</p>
+            </div>
+            <div class="col-lg-4 col-lg-offset-2 text-center">
+                <i class="fa fa-phone fa-3x sr-contact"></i>
+                <p>(905) 227-7072</p>
+            </div>
+            <div class="col-lg-4 text-center">
+                <i class="fa fa-envelope-o fa-3x sr-contact"></i>
+                <p><a href="mailto:your-email@your-domain.com">johnmichaels@bellnet.ca</a></p>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="affiliate">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <h2 class="section-heading">Affiliates</h2>
+                <hr class="primary">
+                <p>Over the years we at John-Michael´s Banquet and Conference Centre have had many great opportunities to work with some of the finest wedding professionals in the industry. Through these associations we have determined that the following list of professionals have our greatest confidence and therefore they all come highly recommended by us.</p>
+            </div>
+            <div class="col-lg-8 col-lg-offset-2 text-center">
+                <script src="~/Scripts/jssor.slider-22.2.6.min.js" type="text/javascript"></script>
+                <script type="text/javascript">
+                    jssor_1_slider_init = function () {
+
+                        var jssor_1_options = {
+                            $AutoPlay: true,
+                            $AutoPlaySteps: 4,
+                            $SlideDuration: 160,
+                            $SlideWidth: 200,
+                            $SlideSpacing: 3,
+                            $Cols: 4,
+                            //$ArrowNavigatorOptions: {
+                            //  $Class: $JssorArrowNavigator$,
+                            //  $Steps: 4
+                            //},
+                            $BulletNavigatorOptions: {
+                                $Class: $JssorBulletNavigator$,
+                                $SpacingX: 1,
+                                $SpacingY: 1
+                            }
+                        };
+
+                        var jssor_1_slider = new $JssorSlider$("jssor_1", jssor_1_options);
+
+                        /*responsive code begin*/
+                        /*you can remove responsive code if you don't want the slider scales while window resizing*/
+                        function ScaleSlider() {
+                            var refSize = jssor_1_slider.$Elmt.parentNode.clientWidth;
+                            if (refSize) {
+                                refSize = Math.min(refSize, 809);
+                                jssor_1_slider.$ScaleWidth(refSize);
+                            }
+                            else {
+                                window.setTimeout(ScaleSlider, 30);
+                            }
+                        }
+                        ScaleSlider();
+                        $Jssor$.$AddEvent(window, "load", ScaleSlider);
+                        $Jssor$.$AddEvent(window, "resize", ScaleSlider);
+                        $Jssor$.$AddEvent(window, "orientationchange", ScaleSlider);
+                        /*responsive code end*/
+                    };
+                </script>
+                <style>
+                            /* jssor slider bullet navigator skin 03 css */
+                            /*
+                    .jssorb03 div           (normal)
+                    .jssorb03 div:hover     (normal mouseover)
+                    .jssorb03 .av           (active)
+                    .jssorb03 .av:hover     (active mouseover)
+                    .jssorb03 .dn           (mousedown)
+                    */
+                            .jssorb03 {
+                                position: absolute;
+                            }
+
+                                .jssorb03 div, .jssorb03 div:hover, .jssorb03 .av {
+                                    position: absolute;
+                                    /* size of bullet elment */
+                                    width: 21px;
+                                    height: 21px;
+                                    text-align: center;
+                                    line-height: 21px;
+                                    color: white;
+                                    font-size: 12px;
+                                    background: url('/Images/Affiliates/b03.png') no-repeat;
+                                    overflow: hidden;
+                                    cursor: pointer;
+                                }
+
+                                .jssorb03 div {
+                                    background-position: -5px -4px;
+                                }
+
+                                    .jssorb03 div:hover, .jssorb03 .av:hover {
+                                        background-position: -35px -4px;
+                                    }
+
+                                .jssorb03 .av {
+                                    background-position: -65px -4px;
+                                }
+
+                                .jssorb03 .dn, .jssorb03 .dn:hover {
+                                    background-position: -95px -4px;
+                                }
+
+                            /* jssor slider arrow navigator skin 03 css */
+                            /*
+                    .jssora03l                  (normal)
+                    .jssora03r                  (normal)
+                    .jssora03l:hover            (normal mouseover)
+                    .jssora03r:hover            (normal mouseover)
+                    .jssora03l.jssora03ldn      (mousedown)
+                    .jssora03r.jssora03rdn      (mousedown)
+                    .jssora03l.jssora03ldn      (disabled)
+                    .jssora03r.jssora03rdn      (disabled)
+                    */
+                            /*.jssora03l, .jssora03r {
+                            display: block;
+                            position: absolute;*/
+                            /* size of arrow element */
+                            /*width: 55px;
+                            height: 55px;
+                            cursor: pointer;
+                            background: url('img/a03.png') no-repeat;
+                            overflow: hidden;
+                        }*/
+
+                            /*.jssora03l {
+                            background-position: -3px -33px;
+                        }
+
+                        .jssora03r {
+                            background-position: -63px -33px;
+                        }
+
+                        .jssora03l:hover {
+                            background-position: -123px -33px;
+                        }
+
+                        .jssora03r:hover {
+                            background-position: -183px -33px;
+                        }
+
+                        .jssora03l.jssora03ldn {
+                            background-position: -243px -33px;
+                        }
+
+                        .jssora03r.jssora03rdn {
+                            background-position: -303px -33px;
+                        }
+
+                        .jssora03l.jssora03lds {
+                            background-position: -3px -33px;
+                            opacity: .3;
+                            pointer-events: none;
+                        }
+
+                        .jssora03r.jssora03rds {
+                            background-position: -63px -33px;
+                            opacity: .3;
+                            pointer-events: none;
+                        }*/
+                </style>
+                <div id="jssor_1" style="position:relative;margin:0 auto;top:0px;left:0px;width:809px;height:150px;overflow:hidden;visibility:hidden;">
+                    <!-- Loading Screen -->
+                    <div data-u="loading" style="position:absolute;top:0px;left:0px;background-color:rgba(0,0,0,0.7);">
+                        <div style="filter: alpha(opacity=70); opacity: 0.7; position: absolute; display: block; top: 0px; left: 0px; width: 100%; height: 100%;"></div>
+                        <div style="position:absolute;display:block;background:url('/Images/Affiliates/loading.gif') no-repeat center center;top:0px;left:0px;width:100%;height:100%;"></div>
+                    </div>
+                    <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:809px;height:150px;overflow:hidden;">
+                        <a data-u="any" href="http://www.jssor.com" style="display:none">Carousel</a>
+                        <div>
+                            <a href="http://amvproductions.ca/">
+                                <img data-u="image" src="/Images/Affiliates/Amv.png" />
+                            </a>
+                        </div>
+                        <div>
+                            <a href="http://www.bcapphoto.com">
+                                <img data-u="image" src="/Images/Affiliates/brian_cap.jpg" />
+                            </a>
+                        </div>
+                        <div>
+                            <a href="http://caffegatti.com/">
+                                <img data-u="image" src="/Images/Affiliates/Caffe-gatti.png" />
+                            </a>
+                        </div>
+                        <div>
+                            <a href="http://www.crivellercakes.com/">
+                                <img data-u="image" src="/Images/Affiliates/criveller.gif" />
+                            </a>
+                        </div>
+                        <div>
+                            <a href="http://www.dynastylimos.com/">
+                                <img data-u="image" src="/Images/Affiliates/Dynasty-limo.png" />
+                            </a>
+                        </div>
+                        <div>
+                            <a href="http://vetronephoto.com/">
+                                <img data-u="image" src="/Images/Affiliates/jvp.png" />
+                            </a>
+                        </div>
+                        <div>
+                            <a href="http://liquidentertainment.ca/">
+                                <img data-u="image" src="/Images/Affiliates/liquid-entertainment.png" />
+                            </a>
+                        </div>
+                        <div>
+                            <a href="http://petrullofloral.com/">
+                                <img data-u="image" src="/Images/Affiliates/petrullo.png" />
+                            </a>
+                        </div>
+                        <div>
+                            <a href="http://www.savoiaonline.com/">
+                                <img data-u="image" src="/Images/Affiliates/Savoia.jpg" />
+                            </a>
+                        </div>
+                        <div>
+                            <a href="http://www.spiritofsound.ca/">
+                                <img data-u="image" src="/Images/Affiliates/SoundOfSpirit.gif" />
+                            </a>
+                        </div>
+                        <div>
+                            <a href="http://vbphotography.net/blog/">
+                                <img data-u="image" src="/Images/Affiliates/stylewithsarina.png" />
+                            </a>
+                        </div>
+                        <div>
+                            <a href="http://www.weddingcompanyniagara.com/">
+                                <img data-u="image" src="/Images/Affiliates/wed_comp.jpg" />
+                            </a>
+                        </div>
+                    </div>
+                    <!-- Bullet Navigator -->
+                    <div data-u="navigator" class="jssorb03" style="bottom:10px;right:10px;">
+                        <!-- bullet navigator item prototype -->
+                        <div data-u="prototype" style="width:21px;height:21px;">
+                            <div data-u="numbertemplate"></div>
+                        </div>
+                    </div>
+                    <!-- Arrow Navigator -->
+                    @*<span data-u="arrowleft" class="jssora03l" style="top:0px;left:8px;width:55px;height:55px;" data-autocenter="2"></span>
+                <span data-u="arrowright" class="jssora03r" style="top:0px;right:8px;width:55px;height:55px;" data-autocenter="2"></span>*@
+                </div>
+                <script type="text/javascript">jssor_1_slider_init();</script>
+                </div>
+            </div>
+        <!-- #endregion Jssor Slider End -->
+    </div>
+</section>
+<footer style="text-align:center; color:white; background-color:#161f32; height:50px; clear:both;">
+    <br />
+    &copy; @DateTime.Now.Year - JM's
+    <br />
+</footer>
+<script src="~/Scripts/bootstrap.min.js"></script>
+
+<link href="~/Content/creative.min.css" rel="stylesheet">
+<link href="~/Content/font-awesome.css" rel="stylesheet">
+<link href="~/Content/font-awesome.min.css" rel="stylesheet">

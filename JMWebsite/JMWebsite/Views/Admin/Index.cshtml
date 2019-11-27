@@ -1,0 +1,231 @@
+﻿@model JMWebsite.ViewModels.AdminView
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/creative.min.admin.css" rel="stylesheet">
+<header></header>
+
+<br>
+<br> 
+<br>
+<br> 
+<br>
+<br> 
+
+<table style="width: 802px;">
+    <tbody>
+        <tr style="height: 426px;">
+            <td style="width: 137px; height: 426px;">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</td>
+            <td style="width: 223px; height: 426px;">
+
+                <table class="fixed_headers">
+                    <thead>
+                        <tr>
+                            <th>Client Name</th>
+                            <th>Phone</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var client in Model.clients)
+                        {
+                            <tr>
+                                <td>
+                                    @client.FullName
+                                </td>
+                                <td>
+                                    @client.cliPhone
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+                <br />
+                @Html.ActionLink("Manage", "Index", "Client", new { area = "" }, new { @class = "btn" })
+
+            </td>
+            <td style="width: 237px; height: 426px;">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</td>
+            <td style="width: 182px; height: 426px;">
+                <table class="fixed_headers">
+                    <thead>
+                        <tr>
+                            <th>Event Name</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var _event in Model.events)
+                        {
+                            <tr>
+                                <td>
+                                    @_event.Name
+                                </td>
+                                <td>
+                                    @_event.Description
+                                </td>
+                            </tr>
+                        }
+
+                </table>
+                <br />
+                @Html.ActionLink("Manage", "IndexForAdmin", "Events", new { area = "" }, new { @class = "btn" })
+
+
+            </td>
+            <td style="width: 237px; height: 426px;">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</td>
+            <td style="width: 108.617px; height: 426px;">
+                <table class="fixed_headers">
+                    <thead>
+                        <tr>
+                            <th>Guest Name</th>
+                            @*<th>Description</th>*@
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var guest in Model.guests)
+                        {
+                            <tr>
+                                <td>
+                                    @guest.FormalName
+                                </td>
+                                
+                            </tr>
+                        }                     
+                    </tbody>
+                </table>
+                <br />
+                @Html.ActionLink("Manage", "Index", "Guests", new { area = "" }, new { @class = "btn" })
+
+            </td>
+        </tr>
+        <tr style="height: 469px;">
+            <td style="width: 137px; height: 426px;">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</td>
+            <td style="width: 223px; height: 469px;">
+                <table class="fixed_headers">
+                    <thead>
+                        <tr>
+                            <th>Events List For Schedule</th>
+                            @*<th>Description</th>*@
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var schedule in Model.schedules)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => schedule._event.Name)
+                                </td>
+
+                            </tr>
+                        }                       
+                 
+                        
+                    </tbody>
+                </table>
+                <br />
+                @Html.ActionLink("Manage", "Index", "Schedules", new { area = "" }, new { @class = "btn" }) 
+
+
+            </td>
+            <td style="width: 237px; height: 469px;">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</td>
+            <td style="width: 182px; height: 469px;">
+                <table class="fixed_headers">
+                    <thead>
+                        <tr>
+                            <th>Catering Services Events List</th>
+                            @*<th>Description</th>*@
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var cateringService in Model.cateringServices)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => cateringService._event.Name)
+                                </td>
+                            </tr>
+                        }
+                    
+                    </tbody>
+                </table>
+                <br />
+                @Html.ActionLink("Manage", "Index", "CateringServices", new { area = "" }, new { @class = "btn" })
+
+
+
+                 
+
+
+
+            </td>
+            <td style="width: 237px; height: 469px;">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</td>
+            <td style="width: 108.617px; height: 469px;">
+                <table class="fixed_headers">
+                    <thead>
+                        <tr>
+                            <th>Contracts</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.contracts)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item._event.Name)
+                                </td>
+                                <td>
+                                    <a href="@Url.Content("~/ContractFiles/" + item.ContractName)">Contract</a>
+                                </td>
+                            </tr>
+                        }
+
+                    </tbody>
+                </table>
+                <br />
+                @Html.ActionLink("Manage", "Index", "Contracts", new { area = "" }, new { @class = "btn" })
+
+
+            </td>
+        </tr>
+        <tr style="height: 504px;">
+            <td style="width: 137px; height: 426px;">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</td>
+            <td style="width: 223px; height: 554px;">
+
+                <table class="fixed_headers">
+                    <thead>
+                        <tr>
+                            <th>Attendees</th>
+                            <th>Roles</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.attendees)
+                        {
+                            <tr>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.FormalName)
+                                </td>
+                                <td>
+                                    @Html.DisplayFor(modelItem => item.Role)
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <br />
+                @Html.ActionLink("Manage", "Index", "Attendees", new { area = "" }, new { @class = "btn" })
+
+
+
+            </td>
+            <td style="width: 237px; height: 554px;">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</td>
+            <td style="width: 182px; height: 554px;"></td>
+            <td style="width: 237px; height: 554px;">&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;&ensp;</td>
+            <td style="width: 108.617px; height: 554px;">&nbsp;</td>
+        </tr>
+    </tbody>
+</table>
+
+<p>&nbsp;</p>
+

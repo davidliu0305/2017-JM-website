@@ -1,0 +1,124 @@
+﻿@model IEnumerable<JMWebsite.Models.Event>
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/creative.min.events.css" rel="stylesheet">
+
+<header>
+    <div class="header-content">
+        <div class="header-content-inner">
+            <h1 id="homeHeading"></h1>
+
+            <br>  <br>  <br> <br>   <br>  <br>  <br>  <br> <br>   <br> <br>  <br>  <br> <br> <br>  <br>  <br> <h1>Events </h1> <br><br>   <br> <br>  <br> <br>   <br>
+
+        </div>
+    </div>
+</header>
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<div class="month-picker">
+
+    <fieldset class="month-picker-fieldset">
+        <input type="radio" name="month" value="0" id="all" checked>
+        <label for="all" class="month-picker-label">All</label>
+        <input type="radio" name="month" value="1" id="jan">
+        <label for="jan" class="month-picker-label">Jan</label>
+        <input type="radio" name="month" value="2" id="feb">
+        <label for="feb" class="month-picker-label">Feb</label>
+        <input type="radio" name="month" value="3" id="mar">
+        <label for="mar" class="month-picker-label">Mar</label>
+        <input type="radio" name="month" value="4" id="apr">
+        <label for="apr" class="month-picker-label">Apr</label>
+        <input type="radio" name="month" value="5" id="may">
+        <label for="may" class="month-picker-label">May</label>
+        <input type="radio" name="month" value="6" id="jun">
+        <label for="jun" class="month-picker-label">Jun</label>
+        <input type="radio" name="month" value="7" id="jul">
+        <label for="jul" class="month-picker-label">Jul</label>
+        <input type="radio" name="month" value="8" id="aug">
+        <label for="aug" class="month-picker-label">Aug</label>
+        <input type="radio" name="month" value="9" id="sep">
+        <label for="sep" class="month-picker-label">Sep</label>
+        <input type="radio" name="month" value="10" id="oct">
+        <label for="oct" class="month-picker-label">Oct</label>
+        <input type="radio" name="month" value="11" id="nov">
+        <label for="nov" class="month-picker-label">Nov</label>
+        <input type="radio" name="month" value="12" id="dec">
+        <label for="dec" class="month-picker-label">Dec</label>
+    </fieldset>
+</div>
+<section id="com">
+    @*<div class="smallcolumn">
+        <img alt="1" class="icons" src="~/Images/1.png">
+        <h3>FBT Night</h3>
+        <p>28th of February</p>
+        <h4>Type</h4>
+        <br>
+
+    </div>
+    <div class="smallcolumn">
+        <img alt="2" class="icons" src="~/Images/2.png">
+        <h3>New Yeras's Eve Gala</h3>
+        <p>Saturday December 31, $95</p>
+        <h4>Type</h4>
+        <br>
+
+    </div>
+    <div class="smallcolumn">
+        <img alt="3" class="icons" src="~/Images/3.png">
+        <h2>Rumble In The Falls</h2>
+        <p>$20 Advanced / $25 Door</p>
+        <h4>Type</h4>
+        <br>
+
+    </div>*@
+        @foreach (var item in Model)
+        {
+            <div class="smallcolumn">
+                <img src="@Url.Content("~/Images/Events/Posters/" + item.PosterName)" alt="" />
+                <h3>@Html.DisplayFor(modelItem => item.Name)</h3>
+                <p>@Html.DisplayFor(modelItem => item.Description)</p>
+                <h4>@Html.DisplayFor(modelItem => item.FullDate)</h4>
+                <h4>@Html.DisplayFor(modelItem => item.Type)</h4>                
+                <p>                  
+                    @Html.ActionLink("Details", "Details", new { id = item.ID })                   
+                </p>
+                <br>
+            </div>
+        }
+    <script src="~/Scripts/jquery-2.1.0.min.js"></script>
+    <script type="text/javascript">
+            $(document).ready(function (){
+                $("input:radio[name='month']").change(function () {
+                    var month = $('input:radio[name=month]:checked').val();
+                    $.ajax({
+                        url: '@Url.Action("GetEventsForUserJSON")',
+                        method: "POST",
+                        data: { month: month },
+                        success: function (result) {
+                            $('#com').empty();
+                            var json = JSON.parse(result);
+                            if(json.length > 0)
+                            {
+                                var dt;
+                                for(i=0; i<json.length; i++)
+                                {
+                                    dt = new Date(json[i].date)
+                                    $('#com').append('<div class="smallcolumn"><img alt="" class="icons" src="/Images/Events/Posters/' + json[i].posterName + '"><h3>'
+                                        + json[i].name + '</h3><p>' + json[i].description + '</p><h4>' + dt.toDateString() + '</h4><h4>' + json[i].type
+                                        + '</h4>' + '<p><a href="/Events/Details/' + json[i].id + '">Details</a></p>' + '</div>');
+                                }
+                            }
+                        }
+                    });
+                });
+            });
+        </script>
+</section>
+<footer style="text-align:center; color:white; background-color:#161f32; height:50px; clear:both;">
+    <br />
+    &copy; @DateTime.Now.Year - JM's
+    <br />
+</footer>
+

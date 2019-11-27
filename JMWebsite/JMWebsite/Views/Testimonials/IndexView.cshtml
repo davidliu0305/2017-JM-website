@@ -1,0 +1,147 @@
+﻿@model IEnumerable<JMWebsite.Models.Testimonial>
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<link href="~/Content/creative.min.testimonials.css" rel="stylesheet">
+<script src="~/Scripts/jquery-2.1.0.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $('.accordion').find('.accordion-toggle').click(function () {
+            var $obj = $(this);
+
+            $obj.toggleClass('open');
+
+            closeAll($obj);
+            is_open($obj);
+        });
+        function closeAll($stuff) {
+            $(".accordion-content").not($stuff.next()).slideUp('fast');
+            var $previous = $('.accordion-content').not($stuff.next()).prev();
+
+            if ($previous.hasClass('open')) {
+                $previous.removeClass('open');
+            }
+        }
+        function is_open($thing) {
+            $thing.next().slideToggle('fast');
+        }
+    });
+</script>
+<style>
+    .accordion{position:relative; }
+    .accordion-toggle{cursor:pointer; }
+    .accordion-toggle:before{content:url(http://demandware.edgesuite.net/aata_prd/on/demandware.static/-/Library-Sites-CG-Global/default/dw528e14ae/pages/faq/img/caret-right.png);
+    display:inline-block;
+    position:absolute;
+    left:-20px;
+    }
+    .accordion-content{display:none;}
+    .accordion-content.default{display:block;}
+    .accordion-content p{margin-left:20px}
+    .open:before {
+        content: url(http://demandware.edgesuite.net/aata_prd/on/demandware.static/-/Library-Sites-CG-Global/default/dw40d48c0d/pages/faq/img/caret-down.png);
+        display: inline-block;
+        position: absolute;
+        left: -20px;
+    }
+</style>
+<header>
+    <div class="header-content">
+        <div class="header-content-inner">
+            <h1 id="homeHeading"></h1>
+
+            <br>  <br>  <br> <br>   <br>  <br>  <br>  <br> <br>   <br> <br>  <br>  <br> <br> <br>  <br>  <br> <h1>Testimonials</h1> <br><br>   <br> <br>  <br> <br>   <br>
+
+        </div>
+    </div>
+</header>
+<section id="section1">
+    <div class="row">
+        <div class="col-lg-5 col-lg-offset-1">
+            <div class="top">
+                <div class="box-header">
+                    <h2>Bridal</h2>
+                </div>
+            </div>
+
+            <div class="accordion">
+                <div>
+                    <hr />
+                        @foreach (var item in Model)
+                        {
+                            if (item.Cat == "Bridal")
+                            {
+                                <div>
+                                    <h5 class="accordion-toggle open"><b>@Html.DisplayFor(modelItem => item.Poster)</b></h5>
+                                    <p class="accordion-content default">
+                                        @Html.DisplayFor(modelItem => item.RecipName),
+                                        <br />
+                                        <br />
+                                        <small>
+                                            @Html.DisplayFor(modelItem => item.Message)
+                                        </small>
+                                        <br />
+                                        <br />
+                                        <i>
+                                            @Html.DisplayFor(modelItem => item.CloseState)
+                                        </i>
+                                        </p>
+                                </div><br />
+                            }
+                        }
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-5 col-lg-offset-1">
+            <img src="/Images/bridal.png" alt="">
+        </div>
+    </div>
+</section>
+
+<section id="section2">
+    <div class="row">
+        <div class="col-lg-5 col-lg-offset-1">
+            <img src="/Images/prof.png" alt="">
+        </div>
+
+        <div class="col-lg-4 col-lg-offset-1">
+
+            <h2>Professionals</h2><br />
+            <hr />
+            <div class="accordion">
+                <div>
+                    @foreach (var item in Model)
+                    {
+                        if (item.Cat == "Professional")
+                        {
+                            <div>
+                                <h5 class="accordion-toggle open"><b>@Html.DisplayFor(modelItem => item.Poster)</b></h5>
+                                <p class="accordion-content default">
+                                    @Html.DisplayFor(modelItem => item.RecipName),
+                                    <br />
+                                    <br />
+                                    <small>
+                                        @Html.DisplayFor(modelItem => item.Message)
+                                    </small>
+                                    <br />
+                                    <br />
+                                    <i>
+                                        @Html.DisplayFor(modelItem => item.CloseState)
+                                    </i>
+                                </p>
+                            </div><br />
+                        }
+                    }
+                </div><br />
+            </div>
+        </div>
+    </div>
+</section>
+<footer style="text-align:center; color:white; background-color:#161f32; height:50px; clear:both;">
+    <br />
+    &copy; @DateTime.Now.Year - JM's
+    <br />
+</footer>
