@@ -1,0 +1,58 @@
+﻿@model IEnumerable<JMWebsite.Models.Client>
+
+@{
+    ViewBag.Title = "Client Index";
+}
+<link href="~/Content/creative.min.admin3.css" rel="stylesheet">
+<br />
+<br />
+<div class="login-box animated fadeInUp">
+    <div class="box-header">
+        <h2>Clients</h2>
+</div>
+        <p>
+            @Html.ActionLink("Create New", "Create")
+
+            @using (Html.BeginForm())
+            {
+                <p>Client: @Html.TextBox("searchString") 
+                <input type="submit" value="Filter"/>
+                @Html.ActionLink("Clear", "Index")</p>
+            }
+        </p>
+
+            <table class="table table-condensed">
+                <tr>
+                    <th>
+                        &emsp;    &emsp;  @Html.DisplayNameFor(model => model.FullName)
+                    </th>
+                    <th>
+                        &emsp;    &emsp;   @Html.DisplayNameFor(model => model.cliPhone)
+                    </th>
+                    <th>
+                        &emsp;   &emsp;   @Html.DisplayNameFor(model => model.cliEmail)
+                    </th>
+                </tr>
+
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.FullName)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.cliPhone)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.cliEmail)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                            @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                        </td>
+                    </tr>
+                }
+
+            </table>
+</div>

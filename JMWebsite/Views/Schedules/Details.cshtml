@@ -1,0 +1,32 @@
+﻿@model JMWebsite.Models.Schedule
+<link href="~/Content/creative.min.client_details.css" rel="stylesheet">
+
+<div class="login-box animated fadeInUp">
+    <div class="box-header">
+            <h2>Schedule</h2>
+    </div>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model._event.Name)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model._event.Name)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.Description)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.Description)
+                </dd>
+
+            </dl>
+
+        <p>
+            @Html.ActionLink("Edit", "Edit", new { id = Model.EventID }) |
+            @Html.ActionLink("Back to List", "Index")
+        </p>
+</div>

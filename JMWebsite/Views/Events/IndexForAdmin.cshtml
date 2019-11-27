@@ -1,0 +1,113 @@
+﻿@model IEnumerable<JMWebsite.Models.Event>
+
+@{
+    ViewBag.Title = "IndexForAdmin";
+}
+<link href="~/Content/creative.min.admin4.css" rel="stylesheet">
+<br />
+<br />
+<br />
+<div class="login-box animated fadeInUp">
+    <div class="box-header">
+        <h2>Events</h2>
+    </div>
+
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+
+        @using (Html.BeginForm())
+        {
+        <p>
+            Name: @Html.TextBox("SearchString")
+            Event Type: @Html.DropDownList("eventType", "All")
+            <input type="submit" value="Filter" />
+            @Html.ActionLink("Clear", "IndexForAdmin")
+        </p>
+        }
+
+        </p>
+        <table class="table">
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Type)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Name)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.StartTime)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Description)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Date)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ActCost)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AttendeeDinner)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AlcService)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.AntipastoBar)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.fPayName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.fPayDate)
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Type)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Name)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.StartTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Description)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Date)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ActCost)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AttendeeDinner)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AlcService)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.AntipastoBar)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.fPayName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.fPayDate)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                        @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+                        @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                    </td>
+                </tr>
+            }
+
+        </table>
+</div>

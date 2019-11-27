@@ -1,0 +1,99 @@
+﻿@model JMWebsite.Models.Client
+
+@{
+    ViewBag.Title = "Delete";
+}
+<link href="~/Content/creative.min.client_details.css" rel="stylesheet">
+
+<div class="login-box animated fadeInUp">
+    <div class="box-header">
+        <h2>Delete</h2>
+    </div>
+        <h3>Are you sure you want to delete this?</h3>
+        <div>
+            <h4>Client</h4>
+            <hr />
+            <dl class="dl-horizontal">
+                <dt>
+                    @Html.DisplayNameFor(model => model.cliName)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.cliName)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.cliCity)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.cliCity)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.cliAddress)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.cliAddress)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.cliPhone)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.cliPhone)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.cliEmail)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.cliEmail)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.cliPostCode)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.cliPostCode)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.cliContactFirst)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.cliContactFirst)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.cliContactLast)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.cliContactLast)
+                </dd>
+
+            </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                @if (Model.events.Count == 0)
+                {
+                <input type="submit" value="Delete" class="btn btn-default" />
+                }
+                else
+                {
+                <p>This client cannot be deleted because of the associated events.</p>
+                }
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+    }
+</div>
+   </div>
